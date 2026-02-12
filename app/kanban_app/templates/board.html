@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kanban</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="title" data-testid="app-title">Kanban</h1>
+    </header>
+
+    <main class="board" data-testid="board">
+      <section class="column" data-testid="column-TODO">
+        <div class="column__header">
+          <h2>TODO</h2>
+        </div>
+
+        <div class="column__body">
+          {% for t in todo %}
+          <article class="task" data-testid="task-{{ t.id }}">
+            <div class="task__title">{{ t.title }}</div>
+            <div class="task__meta">
+              <span class="pill" data-testid="task-priority-{{ t.id }}">{{ t.priority }}</span>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="column" data-testid="column-IN_PROGRESS">
+        <div class="column__header">
+          <h2>IN PROGRESS</h2>
+        </div>
+
+        <div class="column__body">
+          {% for t in in_progress %}
+          <article class="task" data-testid="task-{{ t.id }}">
+            <div class="task__title">{{ t.title }}</div>
+            <div class="task__meta">
+              <span class="pill" data-testid="task-priority-{{ t.id }}">{{ t.priority }}</span>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="column" data-testid="column-DONE">
+        <div class="column__header">
+          <h2>DONE</h2>
+        </div>
+
+        <div class="column__body">
+          {% for t in done %}
+          <article class="task" data-testid="task-{{ t.id }}">
+            <div class="task__title">{{ t.title }}</div>
+            <div class="task__meta">
+              <span class="pill" data-testid="task-priority-{{ t.id }}">{{ t.priority }}</span>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

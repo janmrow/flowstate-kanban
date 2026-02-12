@@ -4,7 +4,7 @@ This repo contains a simple Kanban web application along with an automated testi
 
 ## Tech Stack
 - **Backend:** FastAPI
-- **Testing:** Playwright (Python)
+- **Testing:** Pytest
 - **DevOps:** Docker, GitHub Actions
 
 ## Run locally (app)
@@ -32,7 +32,7 @@ Once the app is running, you can access:
 
 ## Testing
 
-To run E2E tests with Playwright:
+To run tests:
 ```bash
 # Run tests
 pytest
